@@ -6,27 +6,715 @@
   <title>Commercial Electrical Services Sydney | GemElec</title>
   <meta name="description" content="Trusted commercial electrical contractor for Sydney businesses. Fit-outs, maintenance, CCTV, test & tag, switchboard upgrades. Call GemElec: 0498 351 351.">
   <meta name="robots" content="noindex"><!-- Cold email landing — keep out of search index -->
-  <!-- TODO: Open Graph for link sharing -->
+  <link rel="canonical" href="https://www.gemelec.sydney/commercial/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Commercial Electrical Services Sydney | GemElec">
+  <meta property="og:description" content="Trusted commercial electrical contractor for Sydney businesses. Fit-outs, maintenance, CCTV, test & tag, switchboard upgrades. Call 0498 351 351.">
+  <meta property="og:image" content="https://www.gemelec.sydney/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://www.gemelec.sydney/commercial/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Commercial landing page styles -->
+  <style>
+    /* ============================================================
+       COMMERCIAL LANDING PAGE — Page-specific styles
+       ============================================================ */
+
+    /* Hero ------------------------------------------------------- */
+    .cl-hero {
+      background: var(--bg-black);
+      padding: 80px 0 96px;
+      position: relative;
+      overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .cl-hero::before {
+      content: 'COMMERCIAL';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(60px, 12vw, 200px);
+      color: rgba(255,255,255,0.02);
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      pointer-events: none;
+      line-height: 1;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .cl-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 45%;
+      background: linear-gradient(180deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.25;
+    }
+
+    .cl-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .cl-hero__logo {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+      margin-bottom: var(--space-10);
+      animation: clFadeDown 0.6s var(--ease-out) both;
+    }
+    .cl-hero__wordmark {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .cl-hero__gem  { color: var(--teal); }
+    .cl-hero__bolt { color: var(--yellow); font-size: 28px; }
+    .cl-hero__elec { color: var(--teal); }
+    .cl-hero__sub {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 4.5px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-top: 4px;
+      padding-left: 1px;
+    }
+
+    .cl-hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 92px);
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-8);
+      animation: clFadeUp 0.7s 0.1s var(--ease-out) both;
+    }
+    .cl-hero__headline .line-1 { color: var(--text-primary); display: block; }
+    .cl-hero__headline .line-2 { color: var(--teal); display: block; }
+
+    .cl-hero__intro {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: var(--space-10);
+      animation: clFadeUp 0.7s 0.2s var(--ease-out) both;
+    }
+
+    .cl-hero__ctas {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+      animation: clFadeUp 0.7s 0.3s var(--ease-out) both;
+    }
+
+    .cl-hero__secondary {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+    }
+    .cl-hero__secondary a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cl-hero__secondary a:hover { color: var(--text-primary); }
+
+    .cl-hero__divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.2;
+    }
+
+    @keyframes clFadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes clFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Trust signals strip --------------------------------------- */
+    .cl-trust {
+      background: var(--bg-section);
+      border-top: 1px solid var(--bg-border);
+      border-bottom: 1px solid var(--bg-border);
+      padding: var(--space-6) 0;
+    }
+    .cl-trust__row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .cl-trust__pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 186, 181, 0.06);
+      border: 1px solid rgba(10, 186, 181, 0.15);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .cl-trust__pill-icon {
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Commercial services grid ---------------------------------- */
+    .cl-services {
+      background: var(--bg-base);
+    }
+    .cl-services__header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+    .cl-services__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-4);
+    }
+    .cl-services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .cl-service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-8) var(--space-6);
+      position: relative;
+      transition: border-color var(--duration) var(--ease), background var(--duration) var(--ease);
+    }
+    .cl-service-card:hover {
+      border-color: rgba(10, 186, 181, 0.25);
+      background: var(--bg-surface);
+    }
+    .cl-service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: var(--space-6);
+      right: var(--space-6);
+      height: 2px;
+      background: var(--teal);
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease);
+    }
+    .cl-service-card:hover::before { opacity: 1; }
+    .cl-service-card__icon {
+      font-size: 28px;
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+    .cl-service-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
+    }
+    .cl-service-card__desc {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Quote form section --------------------------------------- */
+    .cl-quote {
+      background: var(--bg-section);
+      border-top: 1px solid var(--bg-border);
+    }
+    .cl-quote__layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+    .cl-quote__info { }
+    .cl-quote__eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--space-4);
+    }
+    .cl-quote__heading {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.0;
+      margin-bottom: var(--space-6);
+    }
+    .cl-quote__desc {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+    .cl-quote__promise {
+      list-style: none;
+      margin-bottom: var(--space-8);
+    }
+    .cl-quote__promise li {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.8;
+      padding-left: 20px;
+      position: relative;
+    }
+    .cl-quote__promise li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .cl-quote__phone-cta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: border-color var(--duration) var(--ease);
+    }
+    .cl-quote__phone-cta:hover { border-color: var(--teal); }
+    .cl-quote__phone-icon { font-size: 24px; }
+    .cl-quote__phone-label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+    }
+    .cl-quote__phone-number {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--teal);
+      letter-spacing: -0.5px;
+      display: block;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .cl-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      position: relative;
+    }
+    .cl-form-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: var(--space-8);
+      right: var(--space-8);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--yellow));
+    }
+
+    /* Minimal footer -------------------------------------------- */
+    .cl-footer {
+      background: var(--bg-black);
+      border-top: 1px solid var(--bg-border);
+      padding: var(--space-8) 0;
+      text-align: center;
+    }
+    .cl-footer__main {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-2);
+    }
+    .cl-footer__main a {
+      color: var(--teal);
+      text-decoration: none;
+      transition: color var(--duration) var(--ease);
+    }
+    .cl-footer__main a:hover { color: var(--text-primary); }
+    .cl-footer__copy {
+      font-size: var(--text-xs);
+      color: var(--text-faint);
+    }
+
+    /* Responsive ------------------------------------------------ */
+    @media (max-width: 1024px) {
+      .cl-services__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cl-quote__layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+    }
+    @media (max-width: 768px) {
+      .cl-hero {
+        padding: 60px 0 72px;
+        min-height: auto;
+      }
+      .cl-trust__row {
+        gap: var(--space-3);
+      }
+      .cl-trust__pill {
+        padding: 6px 14px;
+        font-size: 10px;
+      }
+      .cl-services__grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- COMMERCIAL LANDING PAGE
-       NO top nav — no escape routes, focused on conversion.
-       Sections: Hero (commercial headline) · Trust signals · Services (commercial only)
-                 Testimonial/logos · Callback form (Netlify Forms) · Minimal footer
-       TODO: Build in dedicated commercial landing page session -->
+  <!-- NO site navigation — intentional for conversion landing page -->
+
   <main id="main-content">
-    <p style="padding:40px;color:#555;font-family:monospace;">Commercial Landing Page — shell (no nav/footer)</p>
+
+    <!-- ====================================================
+         HERO
+    ===================================================== -->
+    <section class="cl-hero" aria-labelledby="cl-headline">
+      <div class="container">
+        <div class="cl-hero__inner">
+
+          <!-- Logo/wordmark -->
+          <div class="cl-hero__logo" aria-label="GemElec Electrical Services">
+            <span class="cl-hero__wordmark">
+              <span class="cl-hero__gem">GEM</span><span class="cl-hero__bolt">&#9889;</span><span class="cl-hero__elec">ELEC</span>
+            </span>
+            <span class="cl-hero__sub">Electrical Services</span>
+          </div>
+
+          <h1 class="cl-hero__headline" id="cl-headline">
+            <span class="line-1">Sydney's Trusted</span>
+            <span class="line-2">Commercial Electricians</span>
+          </h1>
+
+          <p class="cl-hero__intro">
+            Licensed, fully insured, and backed by 15+ years of hands-on experience.
+            From office fit-outs to 24/7 emergency response &mdash; your business is in safe hands.
+          </p>
+
+          <div class="cl-hero__ctas">
+            <a href="#quote" class="btn btn--teal btn--lg">
+              Get a Free Quote <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <span class="cl-hero__secondary">
+              or call <a href="tel:0498351351">0498 351 351</a>
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="cl-hero__divider" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ====================================================
+         TRUST SIGNALS STRIP
+    ===================================================== -->
+    <div class="cl-trust" role="region" aria-label="Trust signals">
+      <div class="container">
+        <div class="cl-trust__row">
+          <span class="cl-trust__pill">
+            <span class="cl-trust__pill-icon" aria-hidden="true">&#128196;</span> Licence 376553C
+          </span>
+          <span class="cl-trust__pill">
+            <span class="cl-trust__pill-icon" aria-hidden="true">&#128737;</span> Fully Insured
+          </span>
+          <span class="cl-trust__pill">
+            <span class="cl-trust__pill-icon" aria-hidden="true">&#9733;</span> 15+ Years Experience
+          </span>
+          <span class="cl-trust__pill">
+            <span class="cl-trust__pill-icon" aria-hidden="true">&#128268;</span> 24/7 Available
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================
+         COMMERCIAL SERVICES GRID
+    ===================================================== -->
+    <section class="cl-services section--lg" aria-labelledby="cl-services-heading">
+      <div class="container">
+
+        <div class="cl-services__header reveal">
+          <p class="cl-services__eyebrow">What We Do</p>
+          <h2 class="heading-lg" id="cl-services-heading">Commercial Services</h2>
+        </div>
+
+        <div class="cl-services__grid">
+
+          <div class="cl-service-card reveal">
+            <span class="cl-service-card__icon" aria-hidden="true">&#127970;</span>
+            <p class="cl-service-card__title">Office &amp; Retail Fit-outs</p>
+            <p class="cl-service-card__desc">
+              Complete electrical fit-outs for new tenancies, renovations, and refurbishments.
+              Power, data, lighting &mdash; delivered on time and to code.
+            </p>
+          </div>
+
+          <div class="cl-service-card reveal reveal--delay-1">
+            <span class="cl-service-card__icon" aria-hidden="true">&#128736;</span>
+            <p class="cl-service-card__title">Preventative Maintenance Programs</p>
+            <p class="cl-service-card__desc">
+              Scheduled inspections and maintenance to prevent costly downtime.
+              Tailored programs for offices, retail, and warehouses.
+            </p>
+          </div>
+
+          <div class="cl-service-card reveal reveal--delay-2">
+            <span class="cl-service-card__icon" aria-hidden="true">&#128249;</span>
+            <p class="cl-service-card__title">CCTV &amp; Security Systems</p>
+            <p class="cl-service-card__desc">
+              IP cameras, access control, and alarm systems designed
+              and installed to protect your premises around the clock.
+            </p>
+          </div>
+
+          <div class="cl-service-card reveal reveal--delay-1">
+            <span class="cl-service-card__icon" aria-hidden="true">&#127991;&#65039;</span>
+            <p class="cl-service-card__title">Test &amp; Tag Compliance</p>
+            <p class="cl-service-card__desc">
+              Keep your workplace compliant with AS/NZS 3760.
+              Fast turnaround testing and tagging for all portable appliances.
+            </p>
+          </div>
+
+          <div class="cl-service-card reveal reveal--delay-2">
+            <span class="cl-service-card__icon" aria-hidden="true">&#9889;</span>
+            <p class="cl-service-card__title">Switchboard Upgrades</p>
+            <p class="cl-service-card__desc">
+              Upgrade ageing switchboards to handle modern electrical loads safely.
+              RCD protection, safety switch installs, and capacity upgrades.
+            </p>
+          </div>
+
+          <div class="cl-service-card reveal reveal--delay-3">
+            <span class="cl-service-card__icon" aria-hidden="true">&#128680;</span>
+            <p class="cl-service-card__title">Emergency Electrical (24/7)</p>
+            <p class="cl-service-card__desc">
+              Power outages, electrical faults, and urgent repairs &mdash; any time of day or night.
+              A real person answers every call.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         STATS BAR
+    ===================================================== -->
+    <div class="stats-bar" role="region" aria-label="Key statistics">
+      <div class="container">
+        <div class="stats-bar__grid">
+
+          <div class="stats-bar__item reveal">
+            <div class="stats-bar__num">
+              15<span class="accent">+</span>
+            </div>
+            <p class="stats-bar__label">Years Experience</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-1">
+            <div class="stats-bar__num">
+              2000<span class="accent">+</span>
+            </div>
+            <p class="stats-bar__label">Jobs Completed</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-2">
+            <div class="stats-bar__num">
+              24<span class="accent">/</span>7
+            </div>
+            <p class="stats-bar__label">Available</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-3">
+            <div class="stats-bar__num">
+              100<span class="accent">%</span>
+            </div>
+            <p class="stats-bar__label">Licensed &amp; Insured</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================
+         CALLBACK / QUOTE FORM
+    ===================================================== -->
+    <section class="cl-quote section--lg" id="quote" aria-labelledby="cl-quote-heading">
+      <div class="container">
+        <div class="cl-quote__layout">
+
+          <!-- Left info column -->
+          <div class="cl-quote__info reveal">
+            <p class="cl-quote__eyebrow">Get in Touch</p>
+            <h2 class="cl-quote__heading" id="cl-quote-heading">
+              Get Your Free<br>Commercial Quote
+            </h2>
+            <p class="cl-quote__desc">
+              Tell us about your project and we'll get back to you within one business day with a
+              no-obligation quote. Or call us now &mdash; a real person answers.
+            </p>
+            <ul class="cl-quote__promise">
+              <li>No call-out fees for quotes</li>
+              <li>Transparent, upfront pricing</li>
+              <li>Fully licensed &amp; insured (Licence 376553C)</li>
+              <li>Response within one business day</li>
+            </ul>
+            <a href="tel:0498351351" class="cl-quote__phone-cta">
+              <span class="cl-quote__phone-icon" aria-hidden="true">&#128222;</span>
+              <span>
+                <span class="cl-quote__phone-label">Call Now</span>
+                <span class="cl-quote__phone-number">0498 351 351</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Right form column -->
+          <div class="cl-form-wrap reveal reveal--delay-1">
+            <p class="form-title">Request a Callback</p>
+            <form name="commercial-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/?success=true" novalidate>
+              <input type="hidden" name="form-name" value="commercial-quote">
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="company">Company Name</label>
+                  <input class="form-input" type="text" id="company" name="company" placeholder="Your company" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Contact Name</label>
+                  <input class="form-input" type="text" id="contact-name" name="contact-name" placeholder="Your name" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone</label>
+                  <input class="form-input" type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="service">Service Interest</label>
+                <select class="form-select" id="service" name="service" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="Office & Retail Fit-outs">Office &amp; Retail Fit-outs</option>
+                  <option value="Preventative Maintenance">Preventative Maintenance Programs</option>
+                  <option value="CCTV & Security">CCTV &amp; Security Systems</option>
+                  <option value="Test & Tag">Test &amp; Tag Compliance</option>
+                  <option value="Switchboard Upgrades">Switchboard Upgrades</option>
+                  <option value="Emergency Electrical">Emergency Electrical (24/7)</option>
+                  <option value="Other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-textarea" id="message" name="message" rows="4" placeholder="Tell us about your project or requirements..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--teal btn--lg form-submit" style="width:100%;">
+                Request Callback <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+              <p class="form-note">We'll respond within one business day. Your details are never shared.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- MINIMAL FOOTER — contact details only, no full site nav -->
-  <footer style="padding:24px;text-align:center;color:#555;font-size:13px;border-top:1px solid #1c1c1c;">
-    <!-- TODO: GemElec · 0498 351 351 · info@gemelec.sydney · Licence 376553C -->
+
+  <!-- MINIMAL FOOTER — contact details only, no site navigation -->
+  <footer class="cl-footer" role="contentinfo">
+    <div class="container">
+      <p class="cl-footer__main">
+        GemElec Electrical Services &middot;
+        <a href="tel:0498351351">0498 351 351</a> &middot;
+        <a href="mailto:info@gemelec.sydney">info@gemelec.sydney</a> &middot;
+        Licence 376553C
+      </p>
+      <p class="cl-footer__copy">&copy; 2025 GemElec Electrical Services Pty Ltd. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="/assets/js/main.js"></script>
