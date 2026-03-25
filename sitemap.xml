@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://www.gemelec.sydney/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.gemelec.sydney/about/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gemelec.sydney/contact/</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/blog/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Services -->
+  <url><loc>https://www.gemelec.sydney/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/ev-chargers/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/emergency/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/cctv-security/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/lighting/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/switchboard/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/test-tag/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/electrical-advice/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/services/general/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Locations -->
+  <url><loc>https://www.gemelec.sydney/locations/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/matraville/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/botany/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/mascot/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/randwick/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/coogee/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/bondi/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/surry-hills/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/newtown/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/kingsford/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/kensington/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/zetland/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/alexandria/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/waterloo/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/redfern/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/paddington/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/marrickville/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/sydenham/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/wolli-creek/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/rockdale/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gemelec.sydney/locations/brighton-le-sands/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- NOTE: /commercial/ is excluded (noindex landing page) -->
+  <!-- NOTE: Update this file when blog posts or new pages are added -->
+
+</urlset>
