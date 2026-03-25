@@ -5,20 +5,727 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get a Free Quote | GemElec Electrical Services Sydney</title>
   <meta name="description" content="Request a free quote or call GemElec on 0498 351 351. Sydney's trusted electricians for residential and commercial work. Same day service available.">
-  <!-- TODO: Open Graph, canonical, LocalBusiness JSON-LD schema -->
+  <link rel="canonical" href="https://www.gemelec.sydney/contact/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Get a Free Quote | GemElec Electrical Services Sydney">
+  <meta property="og:description" content="Request a free quote or call GemElec on 0498 351 351. Sydney's trusted electricians for residential and commercial work. Same day service available.">
+  <meta property="og:image" content="https://www.gemelec.sydney/assets/images/og-default.jpg">
+  <meta property="og:url" content="https://www.gemelec.sydney/contact/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Contact page styles -->
+  <style>
+    /* ============================================================
+       CONTACT PAGE — Page-specific styles
+    ============================================================ */
+
+    /* Hero ------------------------------------------------------- */
+    .contact-hero {
+      background: var(--bg-black);
+      padding: calc(var(--nav-height) + 80px) 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: 'CONTACT';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(80px, 14vw, 220px);
+      color: rgba(255,255,255,0.022);
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      pointer-events: none;
+      line-height: 1;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 40%;
+      background: linear-gradient(180deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.2;
+    }
+
+    .contact-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .contact-hero__eyebrow {
+      margin-bottom: var(--space-6);
+      animation: fadeInDown 0.6s var(--ease-out) both;
+    }
+
+    .contact-hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-8);
+      animation: fadeInUp 0.7s 0.1s var(--ease-out) both;
+    }
+
+    .contact-hero__headline .line-1 { color: var(--text-primary); display: block; }
+    .contact-hero__headline .line-2 { color: var(--teal); display: block; }
+
+    .contact-hero__statement {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      animation: fadeInUp 0.7s 0.2s var(--ease-out) both;
+    }
+
+    .contact-hero__divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.15;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Contact layout --------------------------------------------- */
+    .contact-section {
+      background: var(--bg-section);
+      border-top: 1px solid var(--bg-border);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    /* Contact details column ------------------------------------- */
+    .contact-details__heading {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-details__intro {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-10);
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-5);
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: border-color var(--duration) var(--ease),
+                  background var(--duration) var(--ease);
+    }
+
+    a.contact-info-item:hover {
+      border-color: var(--teal);
+      background: var(--bg-surface);
+    }
+
+    .contact-info-item__icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-info-item__label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-info-item__value {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text-primary);
+      display: block;
+      line-height: 1.5;
+    }
+
+    a.contact-info-item .contact-info-item__value {
+      color: var(--teal);
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .contact-response-promise {
+      padding: var(--space-5) var(--space-6);
+      background: rgba(10,186,181,0.06);
+      border: 1px solid rgba(10,186,181,0.2);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-response-promise__title {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--space-2);
+    }
+
+    .contact-response-promise__text {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Form column ------------------------------------------------ */
+    .quote-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive ------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .contact-layout { gap: var(--space-12); }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: calc(var(--nav-height) + 48px) 0 64px;
+      }
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+    }
+  </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "GemElec Electrical Services",
+    "telephone": "+61498351351",
+    "email": "info@gemelec.sydney",
+    "url": "https://www.gemelec.sydney",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "587 Bunnerong Road",
+      "addressLocality": "Matraville",
+      "addressRegion": "NSW",
+      "postalCode": "2036",
+      "addressCountry": "AU"
+    },
+    "areaServed": "Greater Sydney",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
 </head>
 <body>
-  <header class="site-nav" id="site-nav"><!-- TODO --></header>
-  <!-- CONTACT PAGE: Phone + Netlify quote form + address + response time promise -->
+
+  <!-- ======================================================
+       SITE NAV
+  ======================================================= -->
+  <header class="site-nav" id="site-nav" role="banner">
+    <div class="container">
+
+      <a href="/" class="nav-logo" aria-label="GemElec Electrical Services — home">
+        <span class="nav-logo__wordmark">
+          <span class="nav-logo__gem">GEM</span><span class="nav-logo__bolt">⚡</span><span class="nav-logo__elec">ELEC</span>
+        </span>
+        <span class="nav-logo__sub">Electrical Services</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <ul role="list">
+
+          <li><a href="/">Home</a></li>
+
+          <li class="nav-item--dropdown">
+            <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-services">
+              Services
+              <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown nav-dropdown--services" id="dropdown-services" role="menu">
+              <div class="dropdown-grid">
+                <a href="/services/emergency/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">⚡</span>
+                  <span class="dropdown-link__text">24/7 Emergency<span class="dropdown-link__desc">Lost power? We respond fast</span></span>
+                </a>
+                <a href="/services/cctv-security/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">📹</span>
+                  <span class="dropdown-link__text">CCTV &amp; Security<span class="dropdown-link__desc">Cameras, alarms &amp; monitoring</span></span>
+                </a>
+                <a href="/services/lighting/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">💡</span>
+                  <span class="dropdown-link__text">Lighting<span class="dropdown-link__desc">Installs &amp; upgrades</span></span>
+                </a>
+                <a href="/services/ev-chargers/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">🔌</span>
+                  <span class="dropdown-link__text">EV Chargers<span class="dropdown-link__desc">Home &amp; workplace installs</span></span>
+                </a>
+                <a href="/services/switchboard/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">🔧</span>
+                  <span class="dropdown-link__text">Switchboards<span class="dropdown-link__desc">Repairs &amp; upgrades</span></span>
+                </a>
+                <a href="/services/test-tag/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">🏷️</span>
+                  <span class="dropdown-link__text">Test &amp; Tag<span class="dropdown-link__desc">Compliance &amp; safety</span></span>
+                </a>
+                <a href="/services/electrical-advice/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">💬</span>
+                  <span class="dropdown-link__text">Electrical Advice<span class="dropdown-link__desc">Smart solutions for your space</span></span>
+                </a>
+                <a href="/services/general/" class="dropdown-link" role="menuitem">
+                  <span class="dropdown-link__icon">🛠️</span>
+                  <span class="dropdown-link__text">Everything Else<span class="dropdown-link__desc">If it has wires, we do it</span></span>
+                </a>
+              </div>
+              <div class="dropdown-footer">
+                <span class="dropdown-footer__label">All electrical &amp; security services</span>
+                <a href="/services/" class="dropdown-footer__link">View All Services →</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="/about/">About</a></li>
+
+          <li class="nav-item--dropdown">
+            <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-locations">
+              Locations
+              <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown nav-dropdown--locations" id="dropdown-locations" role="menu">
+              <div class="dropdown-locations-grid">
+                <a href="/locations/matraville/"        class="dropdown-location-link" role="menuitem">Matraville</a>
+                <a href="/locations/botany/"            class="dropdown-location-link" role="menuitem">Botany</a>
+                <a href="/locations/mascot/"            class="dropdown-location-link" role="menuitem">Mascot</a>
+                <a href="/locations/randwick/"          class="dropdown-location-link" role="menuitem">Randwick</a>
+                <a href="/locations/coogee/"            class="dropdown-location-link" role="menuitem">Coogee</a>
+                <a href="/locations/bondi/"             class="dropdown-location-link" role="menuitem">Bondi</a>
+                <a href="/locations/surry-hills/"       class="dropdown-location-link" role="menuitem">Surry Hills</a>
+                <a href="/locations/newtown/"           class="dropdown-location-link" role="menuitem">Newtown</a>
+                <a href="/locations/kingsford/"         class="dropdown-location-link" role="menuitem">Kingsford</a>
+                <a href="/locations/kensington/"        class="dropdown-location-link" role="menuitem">Kensington</a>
+                <a href="/locations/zetland/"           class="dropdown-location-link" role="menuitem">Zetland</a>
+                <a href="/locations/alexandria/"        class="dropdown-location-link" role="menuitem">Alexandria</a>
+                <a href="/locations/waterloo/"          class="dropdown-location-link" role="menuitem">Waterloo</a>
+                <a href="/locations/redfern/"           class="dropdown-location-link" role="menuitem">Redfern</a>
+                <a href="/locations/paddington/"        class="dropdown-location-link" role="menuitem">Paddington</a>
+                <a href="/locations/marrickville/"      class="dropdown-location-link" role="menuitem">Marrickville</a>
+                <a href="/locations/sydenham/"          class="dropdown-location-link" role="menuitem">Sydenham</a>
+                <a href="/locations/wolli-creek/"       class="dropdown-location-link" role="menuitem">Wolli Creek</a>
+                <a href="/locations/rockdale/"          class="dropdown-location-link" role="menuitem">Rockdale</a>
+                <a href="/locations/brighton-le-sands/" class="dropdown-location-link" role="menuitem">Brighton-Le-Sands</a>
+              </div>
+              <div class="dropdown-footer">
+                <span class="dropdown-footer__label">Greater Sydney &amp; surrounds</span>
+                <a href="/locations/" class="dropdown-footer__link">All Locations →</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+
+        </ul>
+      </nav>
+
+      <a href="tel:0498351351" class="nav-phone" aria-label="Call GemElec on 0498 351 351">
+        <span class="nav-phone__icon" aria-hidden="true">📞</span>
+        0498 351 351
+      </a>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="nav-mobile-overlay" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div><!-- /container -->
+
+    <div class="nav-mobile-overlay" id="nav-mobile-overlay" aria-label="Mobile navigation">
+      <nav class="mobile-nav-links" aria-label="Mobile navigation links">
+        <ul role="list">
+          <li><a href="/" class="mobile-nav-link">Home</a></li>
+          <li>
+            <button class="mobile-nav-link" data-accordion="mobile-services" aria-expanded="false">
+              Services
+              <svg class="mobile-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mobile-subnav" id="mobile-services">
+              <a href="/services/">All Services</a>
+              <a href="/services/emergency/">24/7 Emergency</a>
+              <a href="/services/cctv-security/">CCTV &amp; Security</a>
+              <a href="/services/lighting/">Lighting</a>
+              <a href="/services/ev-chargers/">EV Chargers</a>
+              <a href="/services/switchboard/">Switchboards</a>
+              <a href="/services/test-tag/">Test &amp; Tag</a>
+              <a href="/services/electrical-advice/">Electrical Advice</a>
+              <a href="/services/general/">Everything Else</a>
+            </div>
+          </li>
+          <li><a href="/about/" class="mobile-nav-link">About</a></li>
+          <li>
+            <button class="mobile-nav-link" data-accordion="mobile-locations" aria-expanded="false">
+              Locations
+              <svg class="mobile-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mobile-subnav" id="mobile-locations">
+              <a href="/locations/">All Locations</a>
+              <a href="/locations/matraville/">Matraville</a>
+              <a href="/locations/botany/">Botany</a>
+              <a href="/locations/mascot/">Mascot</a>
+              <a href="/locations/randwick/">Randwick</a>
+              <a href="/locations/coogee/">Coogee</a>
+              <a href="/locations/bondi/">Bondi</a>
+              <a href="/locations/surry-hills/">Surry Hills</a>
+              <a href="/locations/newtown/">Newtown</a>
+              <a href="/locations/kingsford/">Kingsford</a>
+              <a href="/locations/kensington/">Kensington</a>
+              <a href="/locations/marrickville/">Marrickville</a>
+              <a href="/locations/alexandria/">Alexandria</a>
+              <a href="/locations/waterloo/">Waterloo</a>
+              <a href="/locations/redfern/">Redfern</a>
+            </div>
+          </li>
+          <li><a href="/blog/" class="mobile-nav-link">Blog</a></li>
+          <li><a href="/contact/" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-cta">
+        <a href="tel:0498351351" class="mobile-nav-phone">📞 &nbsp;0498 351 351</a>
+        <a href="#quote-form" class="btn btn--outline" style="text-align:center;">Get a Free Quote</a>
+      </div>
+    </div><!-- /mobile overlay -->
+
+  </header><!-- /site-nav -->
+
+
   <main id="main-content">
-    <p style="padding:40px;color:#555;font-family:monospace;">Get a Free Quote | GemElec Electrical Services Sydney — shell</p>
-  </main>
-  <footer class="site-footer" id="site-footer"><!-- TODO --></footer>
+
+    <!-- HERO -->
+    <section class="contact-hero" aria-label="Contact GemElec">
+      <div class="container">
+        <div class="contact-hero__inner">
+
+          <div class="contact-hero__eyebrow">
+            <div class="badge-live" role="status">
+              <span class="badge-live__dot" aria-hidden="true"></span>
+              We Respond Within 2 Hours — Mon to Fri
+            </div>
+          </div>
+
+          <h1 class="contact-hero__headline">
+            <span class="line-1">Get a</span>
+            <span class="line-2">Free Quote</span>
+          </h1>
+
+          <p class="contact-hero__statement">
+            Fill in the form below and we'll get back to you fast. For urgent electrical issues,
+            call us directly on <a href="tel:0498351351" style="color:var(--teal);font-weight:700;">0498 351 351</a> — we're available 24/7 for emergencies.
+          </p>
+
+        </div>
+      </div>
+      <div class="contact-hero__divider" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- CONTACT + FORM -->
+    <section class="contact-section section--lg" id="quote-form" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Left: Contact details -->
+          <div class="contact-details reveal">
+            <h2 class="contact-details__heading" id="contact-heading">Get in Touch</h2>
+            <p class="contact-details__intro">
+              We're a Matraville-based team serving Greater Sydney. Whether it's a quick question,
+              a complex commercial job, or a 3am emergency — we're here to help.
+            </p>
+
+            <div class="contact-info-list">
+
+              <a href="tel:0498351351" class="contact-info-item" aria-label="Call GemElec on 0498 351 351">
+                <span class="contact-info-item__icon" aria-hidden="true">📞</span>
+                <span>
+                  <span class="contact-info-item__label">Phone — 24/7 for Emergencies</span>
+                  <span class="contact-info-item__value">0498 351 351</span>
+                </span>
+              </a>
+
+              <a href="mailto:info@gemelec.sydney" class="contact-info-item" aria-label="Email GemElec">
+                <span class="contact-info-item__icon" aria-hidden="true">✉️</span>
+                <span>
+                  <span class="contact-info-item__label">Email</span>
+                  <span class="contact-info-item__value" style="font-family:inherit;font-size:var(--text-base);font-weight:600;letter-spacing:0;">info@gemelec.sydney</span>
+                </span>
+              </a>
+
+              <div class="contact-info-item">
+                <span class="contact-info-item__icon" aria-hidden="true">📍</span>
+                <span>
+                  <span class="contact-info-item__label">Office Address</span>
+                  <span class="contact-info-item__value" style="font-family:inherit;font-size:var(--text-base);font-weight:600;letter-spacing:0;">587 Bunnerong Road<br>Matraville NSW 2036</span>
+                </span>
+              </div>
+
+              <div class="contact-info-item">
+                <span class="contact-info-item__icon" aria-hidden="true">🕐</span>
+                <span>
+                  <span class="contact-info-item__label">Business Hours</span>
+                  <span class="contact-info-item__value" style="font-family:inherit;font-size:var(--text-base);font-weight:600;letter-spacing:0;">Mon–Fri 7am–5pm<br><span style="color:var(--teal);">24/7 Emergency Response</span></span>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="contact-response-promise reveal reveal--delay-1">
+              <p class="contact-response-promise__title">Our Promise</p>
+              <p class="contact-response-promise__text">
+                We aim to respond to all quote requests within 2 hours during business hours.
+                For after-hours emergencies, call directly — a real person answers every time.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Quote form -->
+          <div class="quote-form-wrap reveal reveal--delay-1">
+            <p class="form-title">Free Quote Request</p>
+            <form name="contact-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/?success=true" novalidate>
+              <input type="hidden" name="form-name" value="contact-quote">
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="cq-name">Your name</label>
+                  <input class="form-input" type="text" id="cq-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cq-phone">Phone number</label>
+                  <input class="form-input" type="tel" id="cq-phone" name="phone" placeholder="04xx xxx xxx" required autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cq-email">Email address</label>
+                <input class="form-input" type="email" id="cq-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cq-service">Service needed</label>
+                <select class="form-select" id="cq-service" name="service" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="emergency">24/7 Emergency Call Out</option>
+                  <option value="ev-charger">EV Charger Install</option>
+                  <option value="lighting">Lighting Install / Upgrade</option>
+                  <option value="switchboard">Switchboard Repair / Upgrade</option>
+                  <option value="cctv">CCTV &amp; Security</option>
+                  <option value="test-tag">Test &amp; Tag</option>
+                  <option value="advice">Electrical Advice</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cq-suburb">Your suburb</label>
+                <input class="form-input" type="text" id="cq-suburb" name="suburb" placeholder="e.g. Randwick, Bondi, Newtown…">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cq-message">Tell us about the job</label>
+                <textarea class="form-textarea" id="cq-message" name="message" placeholder="Brief description of the work needed and your property type…"></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">
+                  Send Quote Request <span class="btn-arrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+              <p class="form-note">We respond to all quote requests within 2 hours during business hours.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EMERGENCY CTA BAND -->
+    <div class="cta-band" role="complementary" aria-label="Emergency contact">
+      <div class="container">
+        <div class="cta-band__text">
+          <p class="cta-band__heading">24/7 Emergency Call Out</p>
+          <p class="cta-band__sub">Lost power? Whatever the emergency, we respond fast.</p>
+        </div>
+        <a href="tel:0498351351" class="cta-band__phone" aria-label="Call GemElec on 0498 351 351">0498 351 351</a>
+      </div>
+    </div>
+
+  </main><!-- /main-content -->
+
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="GemElec home">
+            <span class="footer-logo__wordmark">
+              <span class="footer-logo__gem">GEM</span><span class="footer-logo__bolt">⚡</span><span class="footer-logo__elec">ELEC</span>
+            </span>
+            <span class="footer-logo__sub">Electrical Services</span>
+          </a>
+          <p class="footer-tagline">Sydney's trusted electrical &amp; security experts. Residential &amp; commercial. Available 24/7 for emergencies across Greater Sydney.</p>
+          <div class="footer-certs">
+            <span class="footer-cert">Fully Licensed</span>
+            <span class="footer-cert">Fully Insured</span>
+            <span class="footer-cert">15+ Years Experience</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-title">Services</p>
+          <ul class="footer-links" role="list">
+            <li><a href="/services/emergency/">24/7 Emergency</a></li>
+            <li><a href="/services/cctv-security/">CCTV &amp; Security</a></li>
+            <li><a href="/services/lighting/">Lighting</a></li>
+            <li><a href="/services/ev-chargers/">EV Chargers</a></li>
+            <li><a href="/services/switchboard/">Switchboards</a></li>
+            <li><a href="/services/test-tag/">Test &amp; Tag</a></li>
+            <li><a href="/services/general/">Everything Else</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-title">Locations</p>
+          <ul class="footer-links" role="list">
+            <li><a href="/locations/matraville/">Matraville</a></li>
+            <li><a href="/locations/botany/">Botany</a></li>
+            <li><a href="/locations/randwick/">Randwick</a></li>
+            <li><a href="/locations/bondi/">Bondi</a></li>
+            <li><a href="/locations/newtown/">Newtown</a></li>
+            <li><a href="/locations/surry-hills/">Surry Hills</a></li>
+            <li><a href="/locations/">All Locations →</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon" aria-hidden="true">📞</span>
+            <span class="footer-contact-text"><a href="tel:0498351351">0498 351 351</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon" aria-hidden="true">✉️</span>
+            <span class="footer-contact-text"><a href="mailto:info@gemelec.sydney">info@gemelec.sydney</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon" aria-hidden="true">📍</span>
+            <span class="footer-contact-text">587 Bunnerong Road<br>Matraville NSW 2036</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon" aria-hidden="true">🕐</span>
+            <span class="footer-contact-text">Available 24/7 for emergencies</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p class="footer-copyright">&copy; <script>document.write(new Date().getFullYear())</script> GemElec Electrical Services. All rights reserved.</p>
+        <div class="footer-credentials">
+          <span class="footer-credential">ABN: <span>92 647 631 267</span></span>
+          <span class="footer-credential">Master Licence: <span>000108133</span></span>
+          <span class="footer-credential">Contractor Licence: <span>376553C</span></span>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- /site-footer -->
+
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
