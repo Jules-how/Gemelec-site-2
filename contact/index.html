@@ -236,18 +236,45 @@
     .quote-form-wrap {
       background: var(--bg-card);
       border: 1px solid var(--bg-border);
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-md);
       padding: var(--space-8);
+      position: relative;
+    }
+
+    .quote-form-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: var(--space-8);
+      right: var(--space-8);
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--yellow));
     }
 
     .form-title {
       font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 900;
+      font-size: 24px;
+      font-weight: 700;
       text-transform: uppercase;
       color: var(--text-primary);
       margin-bottom: var(--space-6);
-      letter-spacing: 0.5px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .form-submit {
+      margin-top: var(--space-2);
+    }
+
+    .form-note {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-top: var(--space-3);
+      line-height: 1.5;
     }
 
     /* Responsive ------------------------------------------------- */
@@ -262,6 +289,9 @@
       .contact-layout {
         grid-template-columns: 1fr;
         gap: var(--space-10);
+      }
+      .form-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -488,20 +518,18 @@
         <div class="contact-hero__inner">
 
           <div class="contact-hero__eyebrow">
-            <div class="badge-live" role="status">
-              <span class="badge-live__dot" aria-hidden="true"></span>
-              We Respond Within 2 Hours — Mon to Fri
-            </div>
+            <span class="label">CONTACT US</span>
           </div>
 
           <h1 class="contact-hero__headline">
-            <span class="line-1">Get a</span>
-            <span class="line-2">Free Quote</span>
+            <span class="line-1">Get a Free</span>
+            <span class="line-2">Quote</span>
           </h1>
 
           <p class="contact-hero__statement">
-            Fill in the form below and we'll get back to you fast. For urgent electrical issues,
-            call us directly on <a href="tel:0498351351" style="color:var(--teal);font-weight:700;">0498 351 351</a> — we're available 24/7 for emergencies.
+            Whether you need an emergency call-out, a new installation, or a free quote on
+            upcoming work — get in touch with the GemElec team. We're Sydney's trusted
+            electricians, and we're ready to help.
           </p>
 
         </div>
@@ -634,8 +662,8 @@
     <div class="cta-band" role="complementary" aria-label="Emergency contact">
       <div class="container">
         <div class="cta-band__text">
-          <p class="cta-band__heading">24/7 Emergency Call Out</p>
-          <p class="cta-band__sub">Lost power? Whatever the emergency, we respond fast.</p>
+          <p class="cta-band__heading">Electrical Emergency? Call Now</p>
+          <p class="cta-band__sub">Available 24/7 — a real person answers every time.</p>
         </div>
         <a href="tel:0498351351" class="cta-band__phone" aria-label="Call GemElec on 0498 351 351">0498 351 351</a>
       </div>
