@@ -15,6 +15,10 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/images/favicon-192.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +27,192 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Home page styles -->
+  <style>
+    /* ============================================================
+       HOME PAGE — Page-specific styles
+       ============================================================ */
+
+    /* Hero ------------------------------------------------------- */
+    .hero {
+      background: var(--bg-black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Faint oversized watermark */
+    .hero::before {
+      content: 'ELEC';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(140px, 22vw, 320px);
+      color: rgba(255,255,255,0.025);
+      text-transform: uppercase;
+      letter-spacing: -6px;
+      pointer-events: none;
+      line-height: 1;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    /* Diagonal teal accent line */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 45%;
+      background: linear-gradient(180deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.25;
+    }
+
+    .hero__inner {
+      padding: calc(var(--nav-height) + 48px) 0 96px;
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__badge {
+      margin-bottom: var(--space-8);
+      animation: fadeInDown 0.6s var(--ease-out) both;
+    }
+
+    .hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(60px, 10vw, 108px);
+      font-weight: 900;
+      line-height: 0.91;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-8);
+      animation: fadeInUp 0.7s 0.1s var(--ease-out) both;
+    }
+
+    .hero__headline span {
+      display: block;
+    }
+
+    .hero__headline .line-1 { color: var(--text-primary); }
+    .hero__headline .line-2 { color: var(--teal); }
+    .hero__headline .line-3 { color: #2a2a2a; }
+
+    .hero__sub {
+      max-width: 500px;
+      margin-bottom: var(--space-10);
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      animation: fadeInUp 0.7s 0.2s var(--ease-out) both;
+    }
+
+    .hero__ctas {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      animation: fadeInUp 0.7s 0.3s var(--ease-out) both;
+    }
+
+    .hero__or {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+    }
+
+    .hero__or a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--duration) var(--ease);
+    }
+
+    .hero__or a:hover { color: var(--teal); }
+
+    /* Teal glow divider at bottom of hero */
+    .hero__divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+      opacity: 0.2;
+    }
+
+    /* Page load animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Services section ------------------------------------------ */
+    .services-section {
+      background: var(--bg-base);
+    }
+
+    .services-section__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: var(--space-8);
+      gap: var(--space-4);
+    }
+
+    .services-section__view-all {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color var(--duration) var(--ease);
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(10,186,181,0.3);
+    }
+
+    .services-section__view-all:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-primary);
+    }
+
+    /* Testimonial section --------------------------------------- */
+    .testimonial-section {
+      background: var(--bg-section);
+    }
+
+    /* Responsive ----------------------------------------------- */
+    @media (max-width: 768px) {
+      .hero__inner {
+        padding-top: calc(var(--nav-height) + 32px);
+        padding-bottom: 72px;
+      }
+      .hero__ctas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+      }
+      .services-section__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+      }
+    }
+  </style>
 
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -55,8 +245,6 @@
 
   <!-- ======================================================
        SITE NAV
-       Services → dropdown (8 service links)
-       Locations → dropdown (suburb links)
   ======================================================= -->
   <header class="site-nav" id="site-nav" role="banner">
     <div class="container">
@@ -74,7 +262,7 @@
         <ul role="list">
 
           <li>
-            <a href="/">Home</a>
+            <a href="/" class="active">Home</a>
           </li>
 
           <!-- Services dropdown -->
@@ -308,19 +496,303 @@
 
   <!-- ======================================================
        MAIN CONTENT
-       Home page sections built in dedicated session
   ======================================================= -->
-  <main id="main-content" style="padding-top: var(--nav-height);">
+  <main id="main-content">
 
-    <!-- TODO: Build in Home page session -->
-    <!-- Sections: Hero · Ticker · Services Grid · Stats Bar · Testimonial · Emergency CTA -->
-    <div style="min-height:60vh; display:flex; align-items:center; justify-content:center;">
-      <p style="color:var(--text-faint); font-family:var(--font-body); font-size:13px; letter-spacing:1px;">
-        Home page — build in next session
-      </p>
+    <!-- ====================================================
+         HERO
+    ===================================================== -->
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero__inner">
+
+          <!-- Live badge -->
+          <div class="hero__badge">
+            <div class="badge-live" role="status">
+              <span class="badge-live__dot" aria-hidden="true"></span>
+              Available 24/7 — Greater Sydney
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero__headline">
+            <span class="line-1">Electrical &amp;</span>
+            <span class="line-2">Security</span>
+            <span class="line-3">Experts</span>
+          </h1>
+
+          <!-- Sub-text -->
+          <p class="hero__sub">
+            Residential &amp; Commercial &nbsp;·&nbsp; 15+ years serving Sydney &nbsp;·&nbsp; Licensed, insured, on time.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero__ctas">
+            <a href="/contact/" class="btn btn--primary btn--lg">
+              Free Quote <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <span class="hero__or">
+              or call <a href="tel:0498351351">0498 351 351</a>
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="hero__divider" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ====================================================
+         TICKER STRIP
+    ===================================================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <div class="ticker__inner">
+          <span class="ticker__item">Fully Licensed<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Same Day Service<span class="ticker__dot"></span></span>
+          <span class="ticker__item">15+ Years Experience<span class="ticker__dot"></span></span>
+          <span class="ticker__item">5★ Google Reviews<span class="ticker__dot"></span></span>
+          <span class="ticker__item">24/7 Emergency<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Matraville NSW<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Fully Insured<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Greater Sydney<span class="ticker__dot"></span></span>
+        </div>
+        <!-- Duplicate for seamless loop (also handled by JS) -->
+        <div class="ticker__inner" aria-hidden="true">
+          <span class="ticker__item">Fully Licensed<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Same Day Service<span class="ticker__dot"></span></span>
+          <span class="ticker__item">15+ Years Experience<span class="ticker__dot"></span></span>
+          <span class="ticker__item">5★ Google Reviews<span class="ticker__dot"></span></span>
+          <span class="ticker__item">24/7 Emergency<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Matraville NSW<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Fully Insured<span class="ticker__dot"></span></span>
+          <span class="ticker__item">Greater Sydney<span class="ticker__dot"></span></span>
+        </div>
+      </div>
     </div>
 
-  </main>
+
+    <!-- ====================================================
+         SERVICES SECTION
+    ===================================================== -->
+    <section class="services-section section--lg" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="services-section__header reveal">
+          <div>
+            <div class="section-eyebrow">
+              <div class="section-eyebrow__line" aria-hidden="true"></div>
+              <span class="section-eyebrow__text">What we do</span>
+            </div>
+            <h2 class="heading-lg" id="services-heading">Our Services</h2>
+          </div>
+          <a href="/services/" class="services-section__view-all">View All →</a>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- 1. 24/7 Emergency -->
+          <a href="/services/emergency/" class="service-card reveal reveal--delay-1"
+             aria-label="24/7 Emergency Call Out service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Emergency electrician responding to a power outage in Sydney">
+              <span aria-hidden="true">⚡</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">24/7 Emergency Call Out</p>
+              <p class="service-card__desc">Lost power? We respond around the clock.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 2. CCTV & Security -->
+          <a href="/services/cctv-security/" class="service-card reveal reveal--delay-2"
+             aria-label="CCTV and Security Installs service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="CCTV security camera installation in a Sydney home">
+              <span aria-hidden="true">📹</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">CCTV &amp; Security Installs</p>
+              <p class="service-card__desc">Cameras, alarms, and 24/7 monitoring.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 3. Lighting -->
+          <a href="/services/lighting/" class="service-card reveal reveal--delay-3"
+             aria-label="Lighting Installs and Upgrades service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician installing LED lighting in a Sydney property">
+              <span aria-hidden="true">💡</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">Lighting Installs &amp; Upgrades</p>
+              <p class="service-card__desc">Transform your space and cut your bill.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 4. EV Chargers -->
+          <a href="/services/ev-chargers/" class="service-card reveal reveal--delay-4"
+             aria-label="EV Charger Installs service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician installing an EV charger at a Sydney home">
+              <span aria-hidden="true">🔌</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">EV Charger Installs</p>
+              <p class="service-card__desc">Home and workplace charging solutions.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 5. Electrical Advice -->
+          <a href="/services/electrical-advice/" class="service-card reveal reveal--delay-1"
+             aria-label="Electrical Solutions and Advice service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician providing electrical advice to a Sydney homeowner">
+              <span aria-hidden="true">💬</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">Electrical Solutions &amp; Advice</p>
+              <p class="service-card__desc">Smart recommendations for homes and businesses.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 6. Test & Tag -->
+          <a href="/services/test-tag/" class="service-card reveal reveal--delay-2"
+             aria-label="Test and Tag service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician performing test and tag compliance in Sydney">
+              <span aria-hidden="true">🏷️</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">Test &amp; Tag</p>
+              <p class="service-card__desc">Minimise risk and meet compliance requirements.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 7. Switchboard -->
+          <a href="/services/switchboard/" class="service-card reveal reveal--delay-3"
+             aria-label="Switchboard Repairs and Upgrades service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician upgrading a switchboard in a Sydney home">
+              <span aria-hidden="true">🔧</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">Switchboard Repairs &amp; Upgrades</p>
+              <p class="service-card__desc">Protect your property from electrical faults.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+          <!-- 8. Everything Else -->
+          <a href="/services/general/" class="service-card reveal reveal--delay-4"
+             aria-label="General Electrical service">
+            <div class="service-card__img-placeholder" role="img"
+                 aria-label="Electrician completing general electrical work in Sydney">
+              <span aria-hidden="true">🛠️</span>
+            </div>
+            <div class="service-card__body">
+              <p class="service-card__name">Everything Else Electrical</p>
+              <p class="service-card__desc">If it has wires, chances are we do it.</p>
+              <span class="service-card__arrow" aria-hidden="true">Learn more →</span>
+            </div>
+          </a>
+
+        </div><!-- /services-grid -->
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         STATS BAR
+    ===================================================== -->
+    <div class="stats-bar" role="region" aria-label="Key statistics">
+      <div class="container">
+        <div class="stats-bar__grid">
+
+          <div class="stats-bar__item reveal">
+            <div class="stats-bar__num">
+              15<span class="accent">+</span>
+            </div>
+            <p class="stats-bar__label">Years Experience</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-1">
+            <div class="stats-bar__num">
+              24<span class="accent">/</span>7
+            </div>
+            <p class="stats-bar__label">Emergency Response</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-2">
+            <div class="stats-bar__num">
+              Same<span class="accent" style="font-size:0.55em; margin-left:6px;">Day</span>
+            </div>
+            <p class="stats-bar__label">Service Available</p>
+          </div>
+
+          <div class="stats-bar__item reveal reveal--delay-3">
+            <div class="stats-bar__num">
+              5<span class="accent">★</span>
+            </div>
+            <p class="stats-bar__label">Google Rated</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====================================================
+         TESTIMONIAL
+    ===================================================== -->
+    <section class="testimonial-section section" aria-labelledby="testimonial-heading">
+      <div class="container">
+
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow__line" aria-hidden="true"></div>
+          <span class="section-eyebrow__text">What our clients say</span>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="testimonial__stars" aria-label="Five star review">★★★★★</div>
+          <blockquote class="testimonial__quote">
+            Genuinely the best Electricians in Sydney! Incredible service, fairly priced &amp; extremely
+            reliable. The team are always willing to go the extra mile &amp; their quality of work is next
+            level — Highly HIGHLY recommend!
+          </blockquote>
+          <p class="testimonial__author">
+            — <strong>Jorja</strong>, Botany
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ====================================================
+         EMERGENCY CTA BAND
+    ===================================================== -->
+    <div class="cta-band" role="complementary" aria-label="Emergency contact">
+      <div class="container">
+        <div class="cta-band__text">
+          <p class="cta-band__heading">24/7 Emergency Call Out</p>
+          <p class="cta-band__sub">Lost power? Whatever the emergency, we respond fast.</p>
+        </div>
+        <a href="tel:0498351351" class="cta-band__phone" aria-label="Call GemElec on 0498 351 351">
+          0498 351 351
+        </a>
+      </div>
+    </div>
+
+
+  </main><!-- /main-content -->
 
 
   <!-- ======================================================
